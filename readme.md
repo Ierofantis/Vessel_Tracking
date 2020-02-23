@@ -24,7 +24,7 @@
    http://localhost:8000/vessels?mmsi=247039300 => fetch data with specific mmsi
    http://localhost:8000/vessels?mmsi=247039300,311486000 => fetch data with various mmsi
    http://localhost:8000/vessels?timestamp=1372700100 => fetch data with specific timestamp
- - I have written tests that covers some cases for all the routes. To run the asssertions enter:
+ - I have written tests that cover some cases for all the routes. To run the asssertions enter:
 
  ```sh
    ./vendor/bin/phpunit Tests/TestQueries
