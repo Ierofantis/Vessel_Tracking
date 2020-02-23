@@ -13,20 +13,23 @@
   - .env example rename it to .env
   - From the command line navigate to you project and enter :
    php artisan import:ships-positions.That command will import the positions of vessels to your mongodb
-  - After that enter:
+  - Start the server with:
+
 ```sh
    php -S localhost:8000 -t public
 ```
-   To start the server
+   
  - The routes are (Ideally I would use swagger):
    http://localhost:8000/vessels => fetch the document raw
    http://localhost:8000/vessels?mmsi=247039300 => fetch data with specific mmsi
    http://localhost:8000/vessels?mmsi=247039300,311486000 => fetch data with various mmsi
    http://localhost:8000/vessels?timestamp=1372700100 => fetch data with specific timestamp
  - I have written tests that covers some cases for all the routes. To run the asssertions enter:
+
  ```sh
    ./vendor/bin/phpunit Tests/TestQueries
 ```
+
 My Work exists in:
 
  -  Console/Commands/ShipsPositionsImport.php
