@@ -34,6 +34,24 @@ class TestQueries extends TestCase
             }            
         }
 
+        public function test_timestamp()
+        {
+            $response = $this->client->get('/vessels', [
+                'query' => [
+                    'timestamp' => 1372700100
+                ]
+            ]);
+    
+            $this->assertEquals(200, $response->getStatusCode());
+            $body = json_decode($response->getBody());
+             if (isset($body, $body->data) && count($body->data) > 0) {
+                $data = $body->data;
+             foreach ($data as $d){   
+                $this->assertEquals(1372700100, $d->timestamp);
+               }
+            }            
+        }
+
         public function test_mmsi_multiple_queries_test()
         {
             $response = $this->client->get('/vessels', [
